@@ -1,0 +1,49 @@
+<div class="modal fade z-index-3" id="pinModal" data-bs-backdrop="static" 
+data-bs-keyboard="false"  tabindex="-1" aria-labelledby="pinModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog mt-12">
+    <div class="modal-content rounded-1">
+      <div class="modal-header p-3">
+        <h1 class="modal-title fs-6" id="pinModalLabel">Add Pin</h1>
+        <button type="button" class="btn-close" #close data-bs-dismiss="modal" aria-label="Close"
+         (click)="closeModal()" ></button>
+      </div>
+        <div class="modal-body">
+          <div class="my-2">
+            <label class="fs-6 fw-semibold">Title</label>
+            <input class="form-control mt-1" [(ngModel)]="title">
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold">image</label>
+            <input #file type="file" class="form-control mt-1"  ng2FileSelect [uploader]="uploader">
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold mb-1">collaborators</label>
+            <ngx-select [items]="collaboratorsList" [multiple]="true" [(ngModel)]="collaborators" [disabled]="customersList == null || customersList.length == 0"></ngx-select>
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold mb-1">privacy</label>
+            <div class="d-flex">
+                <div class=" me-2">
+                    <input class="me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="privacy" [value]="'private'" [checked]="privacy === 'private'">
+                    <label class="" for="flexRadioDefault1">
+                      Private
+                    </label>
+                  </div>
+                  <div class="">
+                    <input class="me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [(ngModel)]="privacy" [value]="'public'" [checked]="privacy === 'public'">
+                    <label class="" for="flexRadioDefault2">
+                      Public
+                    </label>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()"><i class="bi bi-plus-circle me-1"></i>Add Pin</button>
+          <p *ngIf="err" class="alert alert-danger p-2"><i
+              class="bi bi-exclamation-triangle-fill me-2 text-danger"></i>{{errMessage}}</p>
+        </div>
+    </div>
+  </div>
+</div>

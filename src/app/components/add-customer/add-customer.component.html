@@ -1,0 +1,36 @@
+<div class="modal fade z-index-3" data-bs-backdrop="static" 
+data-bs-keyboard="false" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog mt-12">
+    <div class="modal-content rounded-1">
+      <div class="modal-header p-3">
+        <h1 class="modal-title fs-6" id="customerModalLabel">Add Customer</h1>
+        <button type="button" class="btn-close" #close data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeModel()"></button>
+      </div>
+        <div class="modal-body">
+          <div class="my-2">
+            <label class="fs-6 fw-semibold">Title</label>
+            <input class="form-control mt-1" [(ngModel)]="title">
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold">email</label>
+            <input class="form-control mt-1" [(ngModel)]="email">
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold mb-1">Region</label>
+            <ngx-select [items]="regionArr" [(ngModel)]="region" (ngModelChange)="regionChanged(region)"></ngx-select>
+          </div>
+          <div class="my-2">
+            <label class="fs-6 fw-semibold mb-1">Country</label>
+            <ngx-select [items]="countriesArr" [(ngModel)]="country"></ngx-select>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()"><i class="bi bi-plus-circle me-1"></i>Add Customer</button>
+          <p *ngIf="err" class="alert alert-danger p-2"><i
+              class="bi bi-exclamation-triangle-fill me-2 text-danger"></i>{{errMessage}}</p>
+        </div>
+    </div>
+  </div>
+</div>

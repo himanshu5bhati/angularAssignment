@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+.list-group .list-group-item:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .list-group {
+    .list-group-item {
+      &:hover {
+        background-color: #fefef0;
+      }
+    }
+  }
+  
+  .table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  
+  .table-hover tbody tr:hover td,
+  .table-hover tbody tr:hover th {
+    background: #fefef0 !important;
+    --bs-table-bg-state: transparent;
+  }
+  
+  table {
+    tr {
+      td {
+        max-height: 6rem;
+        height: 6rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  
