@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddPinComponent } from './add-pin.component';
+import { AddPinCompComponent } from './add-pin-comp.component';
 
-describe('AddPinComponent', () => {
-  let component: AddPinComponent;
-  let fixture: ComponentFixture<AddPinComponent>;
+describe('AddPinCompComponent', () => {
+  let component: AddPinCompComponent;
+  let fixture: ComponentFixture<AddPinCompComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddPinComponent ]
+      declarations: [ AddPinCompComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddPinComponent);
+    fixture = TestBed.createComponent(AddPinCompComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

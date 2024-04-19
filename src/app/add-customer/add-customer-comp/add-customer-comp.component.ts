@@ -3,11 +3,11 @@ import { RegionService } from '../../../app/services/region.service'
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-add-customer',
-  templateUrl: './add-customer.component.html',
-  styleUrls: ['./add-customer.component.scss']
+  selector: 'app-add-customer-comp',
+  templateUrl: './add-customer-comp.component.html',
+  styleUrls: ['./add-customer-comp.component.scss']
 })
-export class AddCustomerComponent implements OnInit {
+export class AddCustomerCompComponent implements OnInit {
   title: any;
   email: any;
   region: any;
@@ -22,9 +22,8 @@ export class AddCustomerComponent implements OnInit {
   closebtnRef!: ElementRef;
   @Output() closed: EventEmitter<any> = new EventEmitter();
 
-
-  constructor(private regionApi: RegionService, private toastr: ToastrService) { }
-
+  constructor(private regionApi: RegionService, private toastr: ToastrService) {}
+  
   ngOnInit(): void {
     this.regionList()
   }

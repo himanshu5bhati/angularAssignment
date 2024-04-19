@@ -3,11 +3,11 @@ import { FileUploader } from 'ng2-file-upload';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-add-pin',
-  templateUrl: './add-pin.component.html',
-  styleUrls: ['./add-pin.component.scss']
+  selector: 'app-add-pin-comp',
+  templateUrl: './add-pin-comp.component.html',
+  styleUrls: ['./add-pin-comp.component.scss']
 })
-export class AddPinComponent implements OnInit, DoCheck {
+export class AddPinCompComponent implements OnInit {
   title: any;
   image: any;
   privacy: any = 'private';

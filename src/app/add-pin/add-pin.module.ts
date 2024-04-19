@@ -1,38 +1,37 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AddPinCompComponent } from './add-pin-comp/add-pin-comp.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddCustomerModule } from './add-customer/add-customer.module';
-import { AddPinModule } from './add-pin/add-pin.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AddPinCompComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     NgxSelectModule,
     FileUploadModule,
     BrowserAnimationsModule,
-    AddCustomerModule,
-    AddPinModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    AddPinCompComponent
+  ]
+
 })
-export class AppModule { }
+export class AddPinModule { }
